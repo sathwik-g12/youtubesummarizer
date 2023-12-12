@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Summarizer Result</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #BDCDA1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #2c3e50;
+            font-family: "Roboto", sans-serif;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        h {
+            font-weight: 1000;
+            font-style: bold;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .result-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .keywords {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .summary {
+            margin-top: 10px;
+        }
+
+        /* Media query for mobile view */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            .result-container {
+                max-width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Video Summary Result</h1>
+    <div class="result-container">
+        <h2>Topic:</h2>
+        <h>{{ video_title }}</h>
+        <h2> Cover Image:</h2>
+        <img class="thumbnail" src="{{ thumbnail_url }}" alt="Video Thumbnail">
+        <h2>Keywords:</h2>
+        <p class="keywords">{{ keywords }}</p>
+        <h2>Original Summary:</h2>
+        <p class="summary">{{ original_summary }}</p>
+        <h2>Translated Summary ({{ target_language }}):</h2>
+        <p class="summary">{{ translated_summary }}</p>
+    </div>
+</body>
+
+</html>
